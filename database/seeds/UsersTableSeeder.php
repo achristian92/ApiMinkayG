@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         'apellidos' => "Ruiz Aguirre",
         'telefono' => "97932",
         'email' => "alan@gmail.com",
-        'password' => bcrypt('123456'),
+        'password' => "123456",
         'accesoWeb' => "1",
         'accesoApp' => "1",
         'remember_token' => str_random(10),
