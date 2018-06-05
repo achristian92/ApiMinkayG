@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::resource('usuarios','UsuarioController');
-Route::resource('agencias','AgenciaController');
-Route::resource('zonas','ZonaController');
-Route::resource('modulos','ModuloController');
-Route::resource('observaciones','ObservacionController');
-Route::resource('rondas','RondaController');
+Route::apiresource('usuarios','UsuarioController');
+Route::apiresource('agencias','AgenciaController');
+Route::apiresource('zonas','ZonaController');
+Route::apiresource('modulos','ModuloController');
+Route::apiresource('agenciassuper','AgenciaSuperController');
+Route::apiresource('observaciones','ObservacionController');
+Route::apiresource('rondas','RondaController');
 
 //Route::post('profe/crear','xontroller@funcion');

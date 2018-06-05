@@ -17,6 +17,7 @@ class CreateZonasTable extends Migration
             $table->increments('idzona');
             $table->string('nombre_zona');
             $table->timestamps();
+            
         });
     }
 

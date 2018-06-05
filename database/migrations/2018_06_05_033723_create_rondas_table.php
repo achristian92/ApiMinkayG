@@ -18,6 +18,7 @@ class CreateRondasTable extends Migration
             $table->integer('num_ronda');
             $table->integer('estadoronda');
             $table->timestamps();
+           
         });
     }
 

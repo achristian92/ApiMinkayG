@@ -8,15 +8,12 @@ class Observacion extends Model
 {
     protected $primaryKey = 'idob';
 
-     protected $fillable = [    	
-    	'idusu',
-    	'idagencia',
-    	'idronda',
+     protected $fillable = [   
+        'cod_supe', 	
     	'idmodulo',
-    	'cod_supe',
     	'ruta_imagen',
     	'comentario',
     	'fecha_supe',
-    	
+    	'idusu',
     ];
 }

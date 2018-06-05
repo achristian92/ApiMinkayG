@@ -18,6 +18,7 @@ class CreateAgenciasTable extends Migration
             $table->string('nombre_agencia');
             $table->string('direccion');
             $table->timestamps();
+            
         });
     }
 

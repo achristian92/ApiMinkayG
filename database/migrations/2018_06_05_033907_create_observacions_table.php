@@ -15,15 +15,16 @@ class CreateObservacionsTable extends Migration
     {
         Schema::create('observacions', function (Blueprint $table) {
             $table->increments('idob');
-            $table->integer('idusu');
-            $table->integer('idagencia');
-            $table->integer('idronda');
-            $table->integer('idmodulo');
             $table->string('cod_supe');
-            $table->string('ruta_imagen');
-            $table->string('comentario');
+            $table->integer('idmodulo')->unsigned();
+            $table->string('ruta_imagen')->nulleable();
+            $table->string('comentario')->nulleable();
             $table->date('fecha_supe');
+            $table->integer('idusu')->unsigned();
+            $table->foreign('idmodulo')->references('idmodulo')->on('modulos');
+            $table->foreign('idusu')->references('id')->on('users');
             $table->timestamps();
+            
         });
     }
 

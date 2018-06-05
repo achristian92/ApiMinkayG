@@ -17,6 +17,7 @@ class CreateModulosTable extends Migration
             $table->increments('idmodulo');
             $table->string('nombre_modulo');
             $table->timestamps();
+            
         });
     }
 
