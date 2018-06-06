@@ -1,6 +1,6 @@
 <?php 
-$con = mysqli_connect("localhost","root","fb31d223a592c87cb0c2db397a43b69980f161bd2b2434d8","WS_MINKAYG");
-$cod_gene = "codprueba";
+$con = mysqli_connect("localhost","root","root","MinkayG");
+$cod_gene = $_POST["cod_supe"];
 $idmod = $_POST["idmodulo"];
 $ruta_imagen = $_POST["ruta_imagen"];
 $comentario = $_POST["comentario"];
@@ -18,7 +18,14 @@ $statement = mysqli_prepare($con,"INSERT INTO observacions(cod_supe,idmodulo,rut
 mysqli_stmt_bind_param($statement, "sisssi", $cod_gene,$idmod,$ruta_imagen,$comentario,$fecha,$idusu);
 mysqli_stmt_execute($statement);
 $response =  array();
-$response["success"] = true;
+$response["success"] = false;
+while(mysqli_stmt_fetch($statement)){
+	$response["success"] = true;
+	
+	
+
+}
+
 echo json_encode($response);
 
  ?>

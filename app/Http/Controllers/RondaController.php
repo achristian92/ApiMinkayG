@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ronda;
 use Illuminate\Http\Request;
-
+use App\Observacion;
 class RondaController extends Controller
 {
     
@@ -24,7 +24,8 @@ class RondaController extends Controller
 
     public function show(Ronda $ronda)
     {
-        //
+        return Ronda::find($ronda);
+
     }
 
    

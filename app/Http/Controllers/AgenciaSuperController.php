@@ -1,28 +1,38 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Agencia;
 use App\Agencia_Super;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use App\Observacion;
 class AgenciaSuperController extends Controller
 {
    
     public function index()
     {
-        $agenciasuper = Agencia_Super::All();
-        return $agenciasuper;
+        $agencia_supers = DB::table('agencia__supers')
+           ->join('users',     'users.id'             ,'=','agencia__supers.idusu')
+           ->join('agencias',  'agencias.idagencia'   ,'=','agencia__supers.idagencia')
+           ->join('rondas',    'rondas.idronda'       ,'=','agencia__supers.idronda')
+           ->select('idagsupe','name','nombre_agencia','jefe_encargado','cod_supe','num_ronda','fecha_agsupe')
+           ->get();
+            return $agencia_supers;  
     }
 
     public function store(Request $request)
     {
-        //
+        
     }
 
     
-    public function show(Agencia_Super $agencia_Super)
+    public function show($agencia_Super)
     {
-        //
+       $user = DB::table('observacions')
+        ->join('modulos', 'observacions.idmodulo', '=', 'modulos.idmodulo')
+        ->where('cod_supe', $agencia_Super)->get();
+        return $user;
+
     }
 
    

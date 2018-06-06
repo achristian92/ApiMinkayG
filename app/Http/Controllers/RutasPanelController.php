@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use GuzzleHttp\Client;
 class RutasPanelController extends Controller
 {
 
@@ -13,7 +13,29 @@ class RutasPanelController extends Controller
 
 
     function observa(){
-    	 return view('agencias');
+    	
+    $client = new Client([
+    'base_uri' => 'http://localhost:8888/MinkayG/public/',
+	]);
+    
+    $response = $client->request('GET', 'api/agenciassuper');
+    $age_su = json_decode($response->getBody()->getContents());
+    	 
+    	 return view('webinterfaz.Agen_Supe',compact('age_su'));
+    }
+
+
+    function observashow($id){
+    	
+    $client = new Client([
+    'base_uri' => 'http://localhost:8888/MinkayG/public/',
+	]);
+    
+    $response = $client->request('GET', "api/agenciassuper/{$id}");
+    $age_su = json_decode($response->getBody()->getContents());
+    	 
+    	  return view('webinterfaz.observaciones',compact('age_su'));
+
     }
       
 }

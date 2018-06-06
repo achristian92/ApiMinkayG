@@ -6,9 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Zona extends Model
 {
-   protected $primaryKey = 'idzona';
+	 protected $table = 'zonas';
 
-     protected $fillable = [    	
+   	protected $primaryKey = 'idzona';
+
+  
+
+   
+
+     protected $fillable = [   
+     	'idzona', 	
     	'nombre_zona',
     	
     ];

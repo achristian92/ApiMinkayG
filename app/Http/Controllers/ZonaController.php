@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Zona;
+
 use Illuminate\Http\Request;
 
 class ZonaController extends Controller
@@ -14,7 +14,7 @@ class ZonaController extends Controller
         return $rzona;
     }
 
-    /*COMO MINIMIZO? XD jaja*/
+ 
     public function store(Request $request)
     {
         $zona = new Zona($request->all());
@@ -25,7 +25,8 @@ class ZonaController extends Controller
     
     public function show(Zona $zona)
     {
-        //
+        
+
     }
 
     
