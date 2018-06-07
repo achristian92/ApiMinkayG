@@ -11,30 +11,28 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link href="../resources/assets/css/estilobienvenida.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <nav class="navbar navbar-default" style="margin-bottom: -21px">
+        <nav class="navbar navbar-default">
           <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">Superivisón - Gerencia</a>
+            <div class="navbar-header" style="display: inline-block;">
+              <div class="navbar-brand" style="padding: 5px 5px"> <img src="../resources/assets/img/logomibanconav.png"  > </div>
             </div>
-            <ul class="nav navbar-nav">
-              <li><a href="{{ route('login') }}">Ingresar</a></li>
-              <li><a href="#">Registrarse</a></li>
 
-            </ul>
           </div>
         </nav>
         <section class="presentacion">
             <div class="container">
                 <div class="row">
 
-                                <h1 align="center">CHECKLIST GERENCIA</h1>
+                                <h1 align="center"></h1>
                 
-                <div class="col-sm-6">
-                    
+                <div class="col-sm-6" style="padding-top: 25px">
+                    <center>
+                   {{--   <img src="../resources/assets/img/mibancoverde.png" id="imagenlogomb"  >  --}}
+                     </center>
                 </div>
 
 
@@ -74,7 +72,12 @@
 
         <footer>
             <center>
-                <span class="pie"> Desarrollador por Minkay</span>
+                <span class="pie"> 
+                    Desarrollado por 
+                    <a href="https://www.minkay.com.pe" target="_blank">
+                        <img src="../resources/assets/img/logominkay.png" height="17" width="85" style="vertical-align: text-top">
+                    </a>  
+                </span>
             </center>
      
         </footer>
