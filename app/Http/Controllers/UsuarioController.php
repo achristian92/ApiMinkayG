@@ -28,11 +28,11 @@ class UsuarioController extends Controller
         if(count($ruser)){
             return [
                             'success' => true,
-                            'data' => $ruser
+                            'data' => $ruser,
                    ];
         }else{
              return [
-                            'success' => false
+                            'success' => 'false'
                     ];
 
         }

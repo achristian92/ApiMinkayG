@@ -15,11 +15,9 @@ class RutasPanelController extends Controller
     function observa(){
     	
     $client = new Client([
-<<<<<<< HEAD
-    'base_uri' => 'http://192.168.1.6/wsminkayg/public/api/agencias',
-=======
+
     'base_uri' => 'http://192.81.219.5/',
->>>>>>> bdb23ad7eccfb2cb508282c566154506489429b2
+
 	]);
     
     $response = $client->request('GET', 'api/agenciassuper');
