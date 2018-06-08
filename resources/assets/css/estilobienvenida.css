@@ -1,12 +1,33 @@
-        .presentacion{
-            background: url("../img/imagenfondo.png");
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+
+        color: white;
+    font-family: calibri;
+    font-weight: bold;
+    letter-spacing: 0.5px
+}
+
+    nav.navbar.navbar-default{
+        background-color: rgb(3,133,45);
+        margin-bottom: -21px;
+        padding: none;
+        border-radius: 0px;
+        border-color:  #4a9263;
+    }
+
+    ul.nav.navbar-nav{
+        float: right;
+    }
+
+
+    .presentacion{
+           /* background: url("../img/imagenfondo.png");*/
              background-size: auto;
              padding-bottom: 25px;
              background-size: 100%
         }
 
         h1{
-            color: white;
+            color: black;
             font-weight: bold;
             letter-spacing: 3px;
             padding-top: 15PX;
@@ -16,7 +37,7 @@
         }
 
         h3{
-            color: white;
+            color: black;
             letter-spacing: 1.5px;
             font-weight: bold;
             text-align: center;
@@ -26,12 +47,9 @@
             padding-bottom: 35px;
             font-family: 'Raleway', sans-serif;
             font-size: 30px;
-            text-decoration: underline;
         }
 
-        img{
-            margin-bottom: 93px
-        }
+
 
         .botoningreso{
            
@@ -43,8 +61,8 @@
 
         #btningreso{
             font-weight: bold;
-            font-size: 16px;
-            letter-spacing: 2px;
+            font-size: 15px;
+            letter-spacing: 1.5px;
         }
 
         .btn{
@@ -53,18 +71,22 @@
 
         footer{
             text-align: center;
-            background-color: #d8d8d8;
-            bottom: 0;
-            
-            padding-top: 13px;
-            padding-bottom: 13px;
+          
+            bottom: 0;            
+            padding-top: 7px;
+            padding-bottom: 7px;
+           
         }
 
         p{
-            color: white;
+           color: black
             font-family: 'Raleway', sans-serif;
             font-weight: bold;
             letter-spacing: 1px
+        }
+
+        h4{
+            color: black
         }
 
         .subtextop{
@@ -78,3 +100,17 @@
         #primerp{
             padding-bottom: 20px;
         }
+
+.btn-primary, .btn-primary.active, .btn-primary:active, .btn-primary:hover, .open>.btn-primary.dropdown-toggle, .btn-primary.focus, .btn-primary:focus, .btn-primary:active:focus{
+    background-color: #03852d;
+    border-color: #03852d;
+}
+
+#imagenlogomb{
+    width: 85%;
+    height: auto;
+}
+
+.pie{
+            font-weight: bold
+}

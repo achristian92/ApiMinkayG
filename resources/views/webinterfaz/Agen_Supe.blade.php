@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <script type="text/javascript">
     $(document).ready(function() {
   $('#example').DataTable({
