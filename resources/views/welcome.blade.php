@@ -57,7 +57,7 @@
 
                 <div class="botoningreso">
                         <a href="{{ route('login') }}" class="btn btn-primary" id="btningreso">
-                           INGRESAR AL SISTEMA
+                           INGRESAR AL SISTEMA ultima actu
                         </a>
                 </div>
                     
