@@ -11,7 +11,11 @@ class AgenciaController extends Controller
     public function index()
     {
         $ragencia = Agencia::all();
-        return $ragencia;
+        return [
+        	'success' => 'true',
+        	'data' => $ragencia
+        	   ];
+
     }
 
     public function store(Request $request)

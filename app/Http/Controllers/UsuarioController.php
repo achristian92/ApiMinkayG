@@ -10,24 +10,41 @@ class UsuarioController extends Controller
     
     public function index()
     {
-        $rusuarios = Usuario::all();
-        $rusuarios["success"]=true;
-        return $rusuarios;
+        $users = Usuario::all();
+        return [
+            'success' => 'true',
+            'data' => $users
+               ];
     }
 
    
 
     public function store(Request $request)
     {
-        $usuario = new Usuario($request->all());
-        $usuario->save();
-        $usuario["success"]=true;
-        return $usuario;
+        $ruser = Usuario::where('email','=', $request->email)
+                          ->where('password','=',$request->password)
+                          ->where('accesoApp','=','1')
+                          ->get();
+        if(count($ruser)){
+            return [
+                            'success' => true,
+                            'data' => $ruser
+                   ];
+        }else{
+             return [
+                            'success' => false
+                    ];
+
+        }
+       
+                
+        
     }
 
     public function show(Usuario $usuario)
     {
-        //
+        
+
     }
 
     

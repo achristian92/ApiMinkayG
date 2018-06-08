@@ -1,5 +1,5 @@
 <?php 
-$con = mysqli_connect("localhost","root","fb31d223a592c87cb0c2db397a43b69980f161bd2b2434d8","WS_MINKAYG");
+$con = mysqli_connect("localhost","root","","webserviceminkayg");
 
 $email = $_POST["email"];
 $password = $_POST["password"];
