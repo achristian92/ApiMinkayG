@@ -28,47 +28,36 @@
         top: 100px
     }
 
-    @keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
+    .modal-footer{
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        border-top: none;
+    }
 
-  50% {
-    opacity: 1;
-  }
-}
+    .modal-content{
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+    }
 
-.zoomIn {
-  -webkit-animation-name: zoomIn;
-  animation-name: zoomIn;
-}
+    div.modal-body > img{
+        box-shadow:  0 5px 15px rgba(0,0,0,.5)
+    }
+
+
+
+
+
+
 
 
 
 
 </style>
 
- <script type="text/javascript">
-  $(document).ready(function(){
-    $( ".celdaimagen" ).hover(function() {
 
-        // alert("hola mundo");
-
-        $('#modalpic').modal({
-        show: true
-        });
-
-
-
-        
-        //    $('#modalpic').modal({
-        // show: true
-    });
-  });  
-
-</script>
 
 
 <div class="container">
@@ -113,7 +102,10 @@
                             {{ $age->idob }}
                         </td>
                         <td class="celdaimg">
-                            <img src="/192.81.219.5{{ $age ->ruta_imagen}}">
+
+                            <img src="{{ $age->ruta_imagen}}" height="70" width="125" data-toggle="modal" data-target="#modalimagen" style="cursor: pointer;" >
+{{--                       <img data-toggle="modal" data-target="#modalimagen" src="/192.81.219.5{{ $age ->ruta_imagen}}">
+                            <button data-toggle="modal" data-target="#modalimagen" style="cursor: pointer;" >abrir modal</button> --}}
                         </td>
                         <td>
                             {{ $age->comentario }}
@@ -135,13 +127,18 @@
     </div>
 </div>
 
-                                <div id="modalpic" class="modal fade  " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog modal-sm zoomIn">
-                                    <div class="modal-content zoomIn">
-                                     <img src="https://cdn.pixabay.com/photo/2017/02/18/11/00/checklist-2077020__340.jpg">
-                                    </div>
-                                  </div>
-                                </div>
+                <div id="modalimagen" class="modal fade  " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                             <div class="modal-body">
+                                <img src="#">
+                            </div>
+                            <div class="modal-footer">
+                                AUTO PERTENECIENTE AL ÁREA DE LOGÍSTICA
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
 @endsection
