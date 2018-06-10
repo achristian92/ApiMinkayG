@@ -18,7 +18,12 @@ class ObservacionController extends Controller
     
     public function store(Request $request)
     {
-        //
+       $observaciones = new Observacion($request->all());
+        $observaciones->save();
+        return [
+            'success' => true,
+            'dataobser' => $observaciones           
+               ];
     }
 
    

@@ -24,12 +24,18 @@ class UsuarioController extends Controller
         $ruser = Usuario::where('email','=', $request->email)
                           ->where('password','=',$request->password)
                           ->where('accesoApp','=','1')
+                          ->select('id','name')
                           ->get();
+
+
         if(count($ruser)){
             return [
-                            "success" => "true",
-                            "data" => $ruser,
-                   ];
+            'success' => true,
+            'data' => $ruser           
+               ];
+                            
+                            
+                   
         }else{
              return [
                             "success" => "false"

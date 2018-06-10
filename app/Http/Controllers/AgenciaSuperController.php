@@ -16,12 +16,21 @@ class AgenciaSuperController extends Controller
            ->join('agencias',  'agencias.idagencia'   ,'=','agencia__supers.idagencia')          
            ->select('idagsupe','name','nombre_agencia','jefe_encargado','cod_supe','fecha_agsupe')
            ->get();
-            return $agencia_supers;  
+           return [
+            "success" => true,
+            "dataagenciassuper" => $agencia_supers
+               ];
+             
     }
 
     public function store(Request $request)
     {
-        
+        $agenciasuper = new Agencia_Super($request->all());
+        $agenciasuper->save();
+        return [
+            'success' => true,
+            'data' => $agenciasuper           
+               ];
     }
 
     
