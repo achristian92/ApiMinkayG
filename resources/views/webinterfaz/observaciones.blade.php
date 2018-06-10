@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-
-
 <style type="text/css">
     h3{
         letter-spacing: 1px;
@@ -45,21 +41,7 @@
     div.modal-body > img{
         box-shadow:  0 5px 15px rgba(0,0,0,.5)
     }
-
-
-
-
-
-
-
-
-
-
 </style>
-
-
-
-
 <div class="container">
     <a class="btn btn-primary" href="{{ route('agencias.super') }}">
         << Regresar
@@ -102,10 +84,15 @@
                             {{ $age->idob }}
                         </td>
                         <td class="celdaimg">
-
-                            <img src="{{ $age->ruta_imagen}}" height="70" width="125" data-toggle="modal" data-target="#modalimagen" style="cursor: pointer;" >
-{{--                       <img data-toggle="modal" data-target="#modalimagen" src="/192.81.219.5{{ $age ->ruta_imagen}}">
-                            <button data-toggle="modal" data-target="#modalimagen" style="cursor: pointer;" >abrir modal</button> --}}
+                            <img data-target="#modalimagen" data-toggle="modal" height="70" src="/{{ $age->ruta_imagen}}" style="cursor: pointer;" width="125">
+                                {{--
+                                <img data-target="#modalimagen" data-toggle="modal" src="/192.81.219.5{{ $age ->ruta_imagen}}">
+                                    <button data-target="#modalimagen" data-toggle="modal" style="cursor: pointer;">
+                                        abrir modal
+                                    </button>
+                                    --}}
+                                </img>
+                            </img>
                         </td>
                         <td>
                             {{ $age->comentario }}
@@ -122,24 +109,20 @@
             </table>
             <div class="dataTables_info col-sm-6">
             </div>
-
         </div>
     </div>
 </div>
-
-                <div id="modalimagen" class="modal fade  " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                             <div class="modal-body">
-                                <img src="#">
-                            </div>
-                            <div class="modal-footer">
-                                AUTO PERTENECIENTE AL ÁREA DE LOGÍSTICA
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+<div aria-hidden="true" aria-labelledby="mySmallModalLabel" class="modal fade " id="modalimagen" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="#">
+                </img>
+            </div>
+            <div class="modal-footer">
+                AUTO PERTENECIENTE AL ÁREA DE LOGÍSTICA
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
-
