@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
 <script type="text/javascript">
     $(document).ready(function() {
   $('#example').DataTable({
@@ -53,9 +51,6 @@
                         </th>
                         <th>
                             JEFE ENCARGADO(BANCO)
-                        </th>
-                        <th>
-                            RONDA
                         </th>
                         <th>
                             CODIGO

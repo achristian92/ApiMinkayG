@@ -27,12 +27,12 @@ class UsuarioController extends Controller
                           ->get();
         if(count($ruser)){
             return [
-                            'success' => true,
-                            'data' => $ruser,
+                            "success" => "true",
+                            "data" => $ruser,
                    ];
         }else{
              return [
-                            'success' => 'false'
+                            "success" => "false"
                     ];
 
         }

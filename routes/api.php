@@ -12,7 +12,6 @@ Route::apiresource('zonas','ZonaController');
 Route::apiresource('modulos','ModuloController');
 Route::apiresource('agenciassuper','AgenciaSuperController');
 Route::apiresource('observaciones','ObservacionController');
-Route::apiresource('rondas','RondaController');
 
 //Route::post('profe/crear','xontroller@funcion');
 

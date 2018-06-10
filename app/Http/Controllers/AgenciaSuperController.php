@@ -13,9 +13,8 @@ class AgenciaSuperController extends Controller
     {
         $agencia_supers = DB::table('agencia__supers')
            ->join('users',     'users.id'             ,'=','agencia__supers.idusu')
-           ->join('agencias',  'agencias.idagencia'   ,'=','agencia__supers.idagencia')
-           ->join('rondas',    'rondas.idronda'       ,'=','agencia__supers.idronda')
-           ->select('idagsupe','name','nombre_agencia','jefe_encargado','cod_supe','num_ronda','fecha_agsupe')
+           ->join('agencias',  'agencias.idagencia'   ,'=','agencia__supers.idagencia')          
+           ->select('idagsupe','name','nombre_agencia','jefe_encargado','cod_supe','fecha_agsupe')
            ->get();
             return $agencia_supers;  
     }
