@@ -79,9 +79,6 @@
                             {{ $age->jefe_encargado }}
                         </td>
                         <td>
-                            {{ $age->num_ronda }}
-                        </td>
-                        <td>
                             {{ $age->cod_supe }}
                         </td>
                         <td>
