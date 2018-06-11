@@ -16,10 +16,9 @@ class AgenciaSuperController extends Controller
            ->join('agencias',  'agencias.idagencia'   ,'=','agencia__supers.idagencia')          
            ->select('idagsupe','name','nombre_agencia','jefe_encargado','cod_supe','fecha_agsupe')
            ->get();
-           return [
-            "success" => true,
-            "dataagenciassuper" => $agencia_supers
-               ];
+
+           return $agencia_supers;
+              
              
     }
 

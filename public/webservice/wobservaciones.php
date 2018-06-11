@@ -1,5 +1,5 @@
 <?php 
-$con = mysqli_connect("localhost","root","root","MinkayG");
+$con = mysqli_connect("localhost","root","","webserviceminkayg");
 $cod_gene = $_POST["cod_supe"];
 $idmod = $_POST["idmodulo"];
 $ruta_imagen = $_POST["ruta_imagen"];
@@ -9,7 +9,7 @@ $idusu = $_POST["idusu"];
 
 
 $generaridfotos = date('Y_m_d_H_i_s');
-$path = "uploads/$generaridfotos.jpg";
+$path = "../../../../$generaridfotos.jpg";
 $actualpath = "192.81.219.5/webservice/$path";
 file_put_contents($path,base64_decode($ruta_imagen));
 
