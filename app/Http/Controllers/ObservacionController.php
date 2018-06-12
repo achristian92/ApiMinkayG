@@ -20,6 +20,7 @@ class ObservacionController extends Controller
     {
 
 
+<<<<<<< HEAD
         $observaciones                  = new Observacion($request->all());      
         $ruta_imagen                    = $request->ruta_imagen;
         $generaridfotos                 = date('Y_m_d_H_i_s');        
@@ -33,10 +34,20 @@ class ObservacionController extends Controller
         $ruta = public_path().'/wsuploads/';
         $path = $ruta."$generaridfotos.jpg";
         file_put_contents($path,base64_decode($ruta_imagen));
+=======
+        $ruta_imagen = $request->ruta_imagen;
+        $generaridfotos = date('Y_m_d_H_i_s');
+         $ruta = public_path().'/wsuploads/';
+        $path = $ruta."$generaridfotos.jpg";
+        $ruta_imagen_actual = "wsuploads/$generaridfotos.jpg";        
+        $observaciones->ruta_imagen = $ruta_imagen_actual;
+        $observaciones->save();     
+>>>>>>> f7bec93b143f836c465433041c3bb13210211adf
        
         return [
             'success'      => true                          
                ];
+       file_put_contents($path,base64_decode($ruta_imagen));
     }
      public function capturaridmodulo($nombre_modulo)
     {

@@ -10,8 +10,10 @@ class ZonaController extends Controller
     
     public function index()
     {
-        $rzona = Zona::all();
-        return $rzona;
+         $rzona = Zona::all();
+        return [
+		'data'=>$rzona
+		];
     }
 
  
