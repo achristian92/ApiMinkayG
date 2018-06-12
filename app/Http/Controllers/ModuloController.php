@@ -11,7 +11,10 @@ class ModuloController extends Controller
     public function index()
     {
         $rmodulo = Modulo::all();
-        return $rmodulo;
+        return [
+		'data' =>$rmodulo
+		];
+
     }
 
      

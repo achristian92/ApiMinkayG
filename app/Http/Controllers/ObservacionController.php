@@ -25,16 +25,15 @@ class ObservacionController extends Controller
         $generaridfotos = date('Y_m_d_H_i_s');
          $ruta = public_path().'/wsuploads/';
         $path = $ruta."$generaridfotos.jpg";
-        file_put_contents($path,base64_decode($ruta_imagen));
-
         $ruta_imagen_actual = "wsuploads/$generaridfotos.jpg";        
         $observaciones->ruta_imagen = $ruta_imagen_actual;
-        $observaciones->save();
+        $observaciones->save();     
        
         return [
             'success' => true,
             'dataobser' => $observaciones           
                ];
+       file_put_contents($path,base64_decode($ruta_imagen));
     }
 
    
