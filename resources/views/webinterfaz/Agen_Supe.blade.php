@@ -59,7 +59,10 @@
                             FECHA
                         </th>
                         <th>
-                            ACCIÓN
+                            OBSERVACIONES
+                        </th>
+                        <th>
+                            ESTADO CORREO 
                         </th>
                     </tr>
                 </thead>

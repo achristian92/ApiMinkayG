@@ -13,6 +13,8 @@ Route::apiresource('modulos','ModuloController');
 Route::apiresource('agenciassuper','AgenciaSuperController');
 Route::apiresource('observaciones','ObservacionController');
 
+Route::post('enviarcorreo', ['as' => 'sendemail', 'uses' => 'CorreosController@sendemail']);
+
 //Route::post('profe/crear','xontroller@funcion');
 
 // Route::get('zon', 'ZonaController@index');

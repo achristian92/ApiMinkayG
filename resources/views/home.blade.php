@@ -30,6 +30,19 @@
                 </div>
             </div>
         </div>
+         <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img height="150" src="http://www.grupoemprende.mx/wp-content/uploads/2015/06/icono-usuarios.jpg" width="250">
+                    </img>
+                </div>
+                <div class="panel-footer" style="background-color: transparent;">
+                    <a class="btn btn-primary" href="" style="background-color: transparent; border-color: transparent; color: #4c4cff; font-weight: bold">
+                        Lista Correos Enviados
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
