@@ -12,8 +12,8 @@ class CorreosController extends Controller
         //Validar si existe codigo de la supe y id modulo
     	$obtenerobservaciones = Observacion::where('idmodulo', $id->idmodulo)
     								 ->where('cod_supe',$id->cod_supe)
-                     ->select('comentario')   
-                     ->limit(3)                                  
+                                     ->select('comentario')   
+                                     ->limit(3)                                  
     								 ->get();
 
     	// return $obtenerobservaciones;				

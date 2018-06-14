@@ -10,8 +10,7 @@ class Agencia_Super extends Model
 
      protected $fillable = [    	
     	'idusu',
-    	'idagencia',
-    	'idronda',
+    	'idagencia',    	
     	'cod_supe',
     	'jefe_encargado',
     	'fecha_agsupe'
