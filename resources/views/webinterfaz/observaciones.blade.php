@@ -41,6 +41,11 @@
     div.modal-body > img{
         box-shadow:  0 5px 15px rgba(0,0,0,.5)
     }
+
+.close:hover, .close{
+color:white!important ;
+opacity: 1}
+
 </style>
 <div class="container">
     <a class="btn btn-primary" href="{{ route('agencias.super') }}">
@@ -84,15 +89,30 @@
                             {{ $age->idob }}
                         </td>
                         <td class="celdaimg">
-                            <img data-target="#modalimagen" data-toggle="modal" height="70" src="/{{ $age->ruta_imagen}}" style="cursor: pointer;" width="125">
-                                {{--
-                                <img data-target="#modalimagen" data-toggle="modal" src="/192.81.219.5{{ $age ->ruta_imagen}}">
-                                    <button data-target="#modalimagen" data-toggle="modal" style="cursor: pointer;">
-                                        abrir modal
-                                    </button>
-                                    --}}
-                                </img>
-                            </img>
+                        <img data-target="#modalimagen-{{ $age->idob }}" data-toggle="modal" height="70" src="/{{ $age->ruta_imagen }}" style="cursor: pointer;" width="125">
+			<div aria-hidden="true" aria-labelledby="mySmallModalLabel" class="modal fade" id="modalimagen-{{ $age->idob }}" role="dialog">
+    				<div class="modal-dialog modal-sm">
+        				<div class="modal-content">
+      <div class="modal-header" style="border-bottom:0px; padding-right:0px; margin-right:-15px; padding-bottom:0px">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white; font-size:30px">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+            					<div class="modal-body">
+       	         				<img src="/{{ $age->ruta_imagen }}" height="400" width="600">
+        	     				</div>
+            					<div class="modal-footer">
+                					AUTO PERTENECIENTE AL ÁREA DE {{ $age->nombre_modulo }} 
+         					</div>
+  				      </div>
+    				</div>
+			</div>
+
+
+
+
+                                
                         </td>
                         <td>
                             {{ $age->comentario }}
@@ -107,20 +127,8 @@
                     @endforeach
                 </tbody>
             </table>
+
             <div class="dataTables_info col-sm-6">
-            </div>
-        </div>
-    </div>
-</div>
-<div aria-hidden="true" aria-labelledby="mySmallModalLabel" class="modal fade " id="modalimagen" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="#">
-                </img>
-            </div>
-            <div class="modal-footer">
-                AUTO PERTENECIENTE AL ÁREA DE LOGÍSTICA
             </div>
         </div>
     </div>

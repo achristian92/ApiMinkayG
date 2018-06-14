@@ -5,7 +5,7 @@ config/database.php
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
-
+public/wsuploads
 # Laravel 5 & Lumen specific
 public/storage
 public/hot
