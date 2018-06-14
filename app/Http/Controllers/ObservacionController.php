@@ -45,6 +45,7 @@ class ObservacionController extends Controller
          }else{
                // guardar tabla agencia super
                 $agenciasuper = new Agencia_Super($request->all());
+                $agenciasuper->fecha_agsupe      = date('Y_m_d'); 
                 $agenciasuper->save();           
              
               //  guardar las observaciones
