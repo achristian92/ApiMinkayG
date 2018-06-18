@@ -67,13 +67,15 @@
         </section>
         <footer>
             <center>
+  <a class="linkminkay" href="https://www.minkay.com.pe">
                 <span class="pie">
                     Desarrollado por
-                    <a href="https://www.minkay.com.pe" target="_blank">
+                  
                         <img height="17" src="{{ asset('img/logominkay.png') }}" style="vertical-align: text-top" width="85">
                         </img>
-                    </a>
+                    
                 </span>
+</a>
             </center>
         </footer>
     </body>
