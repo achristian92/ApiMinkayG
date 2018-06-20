@@ -1,4 +1,4 @@
-<!DOCTYPE doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -43,24 +43,9 @@
                     </div>
                     <div class="col-sm-6">
                         <h3>
-                            Gestiona tus activos
+                            API REST MINKAY GERENCIA
                         </h3>
-                        <h4>
-                            <p class="subtextop" id="primerp">
-                                ¡ Olvídate del papel !
-                            </p>
-                            <p class="descri">
-                                Gestiona los activos de tu organización de manera transparente, óptima y segura.
-                            </p>
-                            <p class="descri">
-                                Ten el control eficiente y eficaz de tu supervisión con seguridad.
-                            </p>
-                        </h4>
-                        <div class="botoningreso">
-                            <a class="btn btn-primary" href="{{ route('login') }}" id="btningreso">
-                                INGRESAR AL SISTEMA
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

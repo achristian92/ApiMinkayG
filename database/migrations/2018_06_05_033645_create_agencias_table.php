@@ -17,6 +17,10 @@ class CreateAgenciasTable extends Migration
             $table->increments('idagencia');
             $table->string('nombre_agencia');
             $table->string('direccion');
+            $table->integer('id_distrito');
+            $table->integer('id_provincia');
+            $table->integer('id_departamento');
+            $table->integer('estado');
             $table->timestamps();
             
         });

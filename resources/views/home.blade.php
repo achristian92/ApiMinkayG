@@ -24,8 +24,8 @@
                     </img>
                 </div>
                 <div class="panel-footer" style="background-color: transparent;">
-                    <a class="btn btn-primary" href="" style="background-color: transparent; border-color: transparent; color: #4c4cff; font-weight: bold">
-                        Administrador
+                    <a class="btn btn-primary" href="{{ route('usuario.index') }}" style="background-color: transparent; border-color: transparent; color: #4c4cff; font-weight: bold">
+                        Configurar Usuarios
                     </a>
                 </div>
             </div>

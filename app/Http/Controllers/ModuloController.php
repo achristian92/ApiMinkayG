@@ -10,7 +10,7 @@ class ModuloController extends Controller
     
     public function index()
     {
-        $rmodulo = Modulo::all();
+        $rmodulo = Modulo::select('idmodulo','nombre_modulo','descrip_modulo')->get();
         return [
 		'data' =>$rmodulo
 		];

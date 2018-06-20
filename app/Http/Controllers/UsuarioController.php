@@ -3,58 +3,49 @@
 namespace App\Http\Controllers;
 
 use App\Usuario;
+// use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsuarioController extends Controller
 {
-    
-    public function index()
-    {
-        $users = Usuario::all();
-        return [
-            'success' => 'true',
-            'data' => $users
-               ];
-    }
 
-   
+    public function index(Request $request)
+    {
+        // if ($request->isJson()) {
+        $users = Usuario::all();
+        return response()->json($users, 200);
+        // }
+        // return response()->json(['error' => 'No Autorizado'], 401, []);
+
+    }
 
     public function store(Request $request)
     {
-        $ruser = Usuario::where('email','=', $request->email)
-                          ->where('password','=',$request->password)
-                          ->where('accesoApp','=','1')
-                          ->select('id','name')
-                          ->get();
-
-
-        if(count($ruser)){
-            return [
-            'success' => true,
-            'data' => $ruser           
-               ];
-                            
-                            
-                   
-        }else{
-             return [
-                            "success" => "false"
-                    ];
-
-        }
-       
-                
         
+        $capturarpassword = Usuario::where('email', '=', $request->email)
+            ->where('accesoApp', '=', '1')
+            ->select('password')
+            ->first();
+
+        if (Hash::check($request->password, $capturarpassword->password)) {
+            return ['success' => true];
+        } else {
+            return ['success' => false];
+        }
+
     }
 
     public function show(Usuario $usuario)
     {
-        
-
+        // return $usuario->id;
+        // $datosusu = Usuario::find($usuario->id);
+        // return $datosusu;
+        $usuarios = DB::table('users')
+            ->where('id', $usuario->id)->get();
+        return $usuarios;
     }
 
-    
-    
     public function update(Request $request, Usuario $usuario)
     {
         //
@@ -64,4 +55,6 @@ class UsuarioController extends Controller
     {
         //
     }
+
+
 }

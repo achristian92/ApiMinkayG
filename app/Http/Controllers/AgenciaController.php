@@ -10,11 +10,11 @@ class AgenciaController extends Controller
     
     public function index()
     {
-        $ragencia = Agencia::all();
-        return [
-        	'success' => 'true',
-        	'data' => $ragencia
-        	   ];
+        // $ragencia = Agencia::select('idagencia','nombre_agencia','direccion')->get();
+        // return [
+        // 	'success' => 'true',
+        // 	'data' => $ragencia
+        // 	   ];
 
     }
 

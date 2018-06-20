@@ -16,14 +16,12 @@ class CreateAgenciaSupersTable extends Migration
         Schema::create('agencia__supers', function (Blueprint $table) {
             $table->increments('idagsupe');
             $table->integer('idusu')->unsigned();
-            $table->integer('idagencia')->unsigned();
-            $table->integer('idronda')->unsigned();
+            $table->integer('idagencia')->unsigned();           
             $table->string('cod_supe');
             $table->string('jefe_encargado');
             $table->date('fecha_agsupe');
             $table->foreign('idusu')->references('id')->on('users');
-            $table->foreign('idagencia')->references('idagencia')->on('agencias');
-            $table->foreign('idronda')->references('idronda')->on('rondas');
+            $table->foreign('idagencia')->references('idagencia')->on('agencias');           
             $table->timestamps();
         });
     }

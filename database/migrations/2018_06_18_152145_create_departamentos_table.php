@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModulosTable extends Migration
+class CreateDepartamentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateModulosTable extends Migration
      */
     public function up()
     {
-        Schema::create('modulos', function (Blueprint $table) {
-            $table->increments('idmodulo');
-            $table->string('nombre_modulo');
-            $table->string('descrip_modulo');
+        Schema::create('departamentos', function (Blueprint $table) {
+            $table->increments('iddepa');
+            $table->string('nom_departamento');
+            $table->integer('idzona');
             $table->timestamps();
-            
         });
     }
 
@@ -29,6 +28,6 @@ class CreateModulosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modulos');
+        Schema::dropIfExists('departamentos');
     }
 }
