@@ -27,7 +27,7 @@ class ObservacionController extends Controller
                 $observaciones                  = new Observacion($request->all());      
                 $ruta_imagen                    = $request->ruta_imagen;
                 $generaridfotos                 = date('Y_m_d_H_i_s');        
-                $ruta_imagen_actual             = "wsuploads/$generaridfotos.jpg";        
+                $ruta_imagen_actual             = "http://192.81.219.5/wsuploads/$generaridfotos.jpg";        
                 $observaciones->ruta_imagen     = $ruta_imagen_actual;
                 $observaciones->idmodulo        = $request->idmodulo;
                 $observaciones->fecha_supe      = date('Y_m_d'); 
@@ -52,7 +52,7 @@ class ObservacionController extends Controller
                 $observaciones                  = new Observacion($request->all());      
                 $ruta_imagen                    = $request->ruta_imagen;
                 $generaridfotos                 = date('Y_m_d_H_i_s');        
-                $ruta_imagen_actual             = "wsuploads/$generaridfotos.jpg";        
+                $ruta_imagen_actual             = "http://192.81.219.5/wsuploads/$generaridfotos.jpg";        
                 $observaciones->ruta_imagen     = $ruta_imagen_actual;
                 // $observaciones->idmodulo        = $this->capturaridmodulo($request->idmodulo);
                 $observaciones->idmodulo        = $request->idmodulo;

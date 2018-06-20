@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Hash;
 use App\Usuario;
 // use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -29,10 +29,19 @@ class UsuarioController extends Controller
             ->first();
 
         if (Hash::check($request->password, $capturarpassword->password)) {
-            return ['success' => true];
+	 $ruser = Usuario::where('email','=', $request->email)
+                           ->select('id','name')
+                          ->get();
+
+            return [
+            'success' => true,
+            'data' => $ruser
+               ];
         } else {
-            return ['success' => false];
-        }
+            return [
+                            "success" => "false"
+                    ];    
+    }
 
     }
 
