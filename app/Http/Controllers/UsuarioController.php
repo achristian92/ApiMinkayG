@@ -23,26 +23,31 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         
-        $capturarpassword = Usuario::where('email', '=', $request->email)
+      $capturarpassword = Usuario::where('email', '=', $request->email)
             ->where('accesoApp', '=', '1')
             ->select('password')
             ->first();
+        if($capturarpassword){
+            if (Hash::check($request->password, $capturarpassword->password)) {
+                            $ruser = Usuario::where('email','=', $request->email)
+                             ->select('id','name')
+                             ->get();
 
-        if (Hash::check($request->password, $capturarpassword->password)) {
-	 $ruser = Usuario::where('email','=', $request->email)
-                           ->select('id','name')
-                          ->get();
-
+                            return [
+                            'success' => true,
+                            'data' => $ruser
+                            ];
+            } else {
             return [
-            'success' => true,
-            'data' => $ruser
-               ];
-        } else {
-            return [
-                            "success" => "false"
+                            "success" => false
                     ];    
-    }
-
+        }    
+        }else{
+            return [
+                            "success" => false
+                    ];    
+        }    
+       
     }
 
     public function show(Usuario $usuario)

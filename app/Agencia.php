@@ -11,6 +11,7 @@ class Agencia extends Model
      protected $fillable = [    	
     	'nombre_agencia',
     	'direccion',
+	'nro_topaz',
     	
     ];
 }

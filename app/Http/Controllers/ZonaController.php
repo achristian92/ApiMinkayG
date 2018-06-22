@@ -26,17 +26,16 @@ class ZonaController extends Controller
     public function show(Zona $zona)
     {
 
-        $filtroagencias = DB::table('agencias')
-            ->join('departamentos', 'agencias.id_departamento', '=', 'departamentos.iddepa')
-            ->join('zonas', 'zonas.idzona', '=', 'departamentos.idzona')
-            ->where('zonas.idzona', $zona->idzona)
-            ->select('idagencia','nombre_agencia','direccion')
-            ->get();
-        return [
-            'success' => 'true',
-            'data' => $filtroagencias
-               ];
-
+          // $filtroagencias = DB::table('agencias')
+        //     ->join('departamentos', 'agencias.id_departamento', '=', 'departamentos.iddepa')
+        //     ->join('zonas', 'zonas.idzona', '=', 'departamentos.idzona')
+        //     ->where('zonas.idzona', $zona->idzona)
+        //     ->select('idagencia','nombre_agencia','direccion')
+        //     ->get();
+        // return [
+        //     'success' => 'true',
+        //     'data' => $filtroagencias
+        //        ];
     }
 
     public function update(Request $request, Zona $zona)
