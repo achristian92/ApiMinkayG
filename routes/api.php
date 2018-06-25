@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 // });
 
 Route::apiresource('usuarios','UsuarioController');
+Route::post('usuarioscheck', ['as' => 'usuario.check', 'uses' => 'UsuarioController@check']);
+
 Route::apiresource('agencias','AgenciaController');
 Route::apiresource('zonas','ZonaController');
 Route::apiresource('modulos','ModuloController');
