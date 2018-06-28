@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use Hash;
 use App\Usuario;
-// use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,17 +38,52 @@ class UsuarioController extends Controller
 
     public function show(Usuario $usuario)
     {
-        // return $usuario->id;
-        // $datosusu = Usuario::find($usuario->id);
-        // return $datosusu;
-        $usuarios = DB::table('users')
-            ->where('id', $usuario->id)->get();
-        return $usuarios;
+		$usuario= Usuario::find($usuario);	
+         	if($usuario){
+		return response()->json(['status'=>'ok','data'=>$usuario],200);
+		}
+		else{
+		return response()->json(['errors'=>array(['code'=>404,'message'=>'No se encontro Ningun Usuario'])],404);
+   
+		}
+		
+
     }
 
-    public function update(Request $request, Usuario $usuario)
+        public function update(Request $request,$usuario)
     {
-        //
+	   $user_exists = Usuario::find($usuario);
+        if (!$user_exists)
+        {
+        return response()->json(['errors'=>array(['code'=>404,'message'=>'No se encontro Ningun Usuario'])],404);
+        }
+        // Listado de campos recibidos teóricamente.
+        $name=$request->input('name');
+        $apellidos=$request->input('apellidos');
+        $telefono=$request->input('telefono');
+        $email=$request->input('email');
+        $password=$request->input('password');
+        $accesoWeb=$request->input('accesoWeb');
+        $accesoApp=$request->input('accesoApp');
+
+
+        if ($request->method() === 'PUT')
+        {
+        // $user = Usuario::find($usuario);
+        // $user->update($request->all());
+        // return ['updated' => true,'id'=>$usuario];
+         //   $passform = $request->password;
+
+       DB::table('users')->where('id', $usuario)->update([
+            'name'           => $name,
+            'apellidos'      => $apellidos,
+       ]);
+
+        return response()->json(['status'=>'ok','data'=>$name], 200);
+        }
+    else{
+        return response()->json(['errors'=>array(['code'=>304,'message'=>'No se ha modificado ningún dato de usuario.'])],304);
+    }
     }
 
     public function destroy(Usuario $usuario)
@@ -60,7 +94,7 @@ class UsuarioController extends Controller
     {
            
       $capturarpassword = Usuario::where('email', '=', $request->email)
-            ->where('accesoApp', '=', '1')
+            ->where('accesoApp', '=', 'SI')
             ->select('password')
             ->first();
         if($capturarpassword){
