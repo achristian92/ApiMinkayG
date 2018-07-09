@@ -36,15 +36,13 @@ class UsuarioController extends Controller
       
     }
 
-    public function show(Usuario $usuario)
+    public function show($usuario)
     {
 		$usuario= Usuario::find($usuario);	
          	if($usuario){
-		return response()->json(['status'=>'ok','data'=>$usuario],200);
-		}
-		else{
-		return response()->json(['errors'=>array(['code'=>404,'message'=>'No se encontro Ningun Usuario'])],404);
-   
+		return response()->json(['code'=>200,'status'=>'ok','data'=>$usuario],200);
+		}		else{
+		return response()->json(['errors'=>array(['code'=>404,'status'=>'error','message'=>'No se encontro Ningun Usuario'])],404);
 		}
 		
 
@@ -69,15 +67,29 @@ class UsuarioController extends Controller
 
         if ($request->method() === 'PUT')
         {
-        // $user = Usuario::find($usuario);
-        // $user->update($request->all());
-        // return ['updated' => true,'id'=>$usuario];
-         //   $passform = $request->password;
 
-       DB::table('users')->where('id', $usuario)->update([
-            'name'           => $name,
-            'apellidos'      => $apellidos,
-       ]);
+        // $datosuserbd = Usuario::find($usuario);
+        $user = Usuario::find($usuario);
+        $passbd = $user->password;
+        if($passbd !== $password){
+           $encr = bcrypt($password);
+        }else{
+            $encr = $password;
+        }
+
+        // $user = Usuario::find($usuario);
+        $user   ->name      = $name;
+        $user   ->apellidos = $apellidos;
+        $user   ->telefono  = $telefono;
+        $user   ->email     = $email;
+        $user   ->telefono  = $telefono;
+        $user   ->password  = $encr;
+        $user   ->accesoWeb  = $accesoWeb;
+        $user   ->accesoApp  = $accesoApp;
+        $user->save();
+        
+
+   
 
         return response()->json(['status'=>'ok','data'=>$name], 200);
         }
